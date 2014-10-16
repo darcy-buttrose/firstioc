@@ -4,16 +4,34 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import com.sample.firstioc.R;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class MainActivity extends Activity {
+import com.google.inject.Inject;
+import com.sample.firstioc.R;
+import com.sample.firstioc.implementation.MainActivityViewModel;
+
+import roboguice.activity.RoboActivity;
+import roboguice.inject.ContentView;
+import roboguice.inject.InjectView;
+
+@ContentView(R.layout.activity_main)
+public class MainActivity extends RoboActivity {
+
+    @InjectView(R.id.nameTextView)
+    TextView nameTextView;
+    @InjectView(R.id.jackButton)
+    Button jackButton;
+    @InjectView(R.id.jillButton)
+    Button jillButton;
+
+    @Inject
+    MainActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
+     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
