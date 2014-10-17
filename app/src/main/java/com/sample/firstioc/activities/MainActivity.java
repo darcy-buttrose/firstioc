@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.google.inject.Inject;
 import com.sample.firstioc.R;
 import com.sample.firstioc.implementation.MainActivityViewModel;
+import com.sample.firstioc.interfaces.IMainActivityViewModel;
 
 import roboguice.activity.RoboActivity;
 import roboguice.inject.ContentView;
@@ -27,7 +28,7 @@ public class MainActivity extends RoboActivity {
     Button jillButton;
 
     @Inject
-    MainActivityViewModel viewModel;
+    IMainActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
